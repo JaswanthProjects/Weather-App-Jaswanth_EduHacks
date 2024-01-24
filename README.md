@@ -18,6 +18,9 @@ A simple website which uses API data to show the weather for the city entered in
 
 # Program
 *This is an Image of how the program looks before it is ran.
+
 <img width="1241" alt="Screenshot 2024-01-24 125149" src="https://github.com/JaswanthProjects/Weather_Api-Website/assets/85422176/c707ea82-cbae-4dfb-a115-d3e1facb4f3d">
+
 *This is an Image of the program after its ran
+
 <img width="1237" alt="Screenshot 2024-01-24 125327" src="https://github.com/JaswanthProjects/Weather_Api-Website/assets/85422176/49f255fe-c983-44b7-9c59-44a59491b8ae">
