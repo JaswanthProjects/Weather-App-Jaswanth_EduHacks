@@ -7,7 +7,7 @@ A simple website which uses API data to show the weather for the city entered in
 * Css (coded in HTML using style)
 * Javascript (coded in HTML using script)
 
-# How to use - 
+### How to use - 
 
 * Type your city you want in the search box
 * After you type your city then hit the search bar
