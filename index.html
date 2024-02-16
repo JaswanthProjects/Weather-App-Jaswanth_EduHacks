@@ -6,7 +6,8 @@
     <title>Weather App</title>
   </head>
   <body>
-  
+
+<!-- Weather App Card -->
   <div class = "card">
     <div class = "search">
       <input type="text" placeholder = "Enter City Name" spellcheck="false">
@@ -14,13 +15,19 @@
         Search
       </button>
     </div>
+
+  <!-- Error Message Section -->
     <div class="error">
       <p>Invalid city name</p>
     </div>
+
+  <!-- Weather Details Section -->
     <div class="weather">
       <img src="images/rain.png" class="weatherI">
       <h1 class="temp">71°F</h1>
       <h2 class="city">Charlotte</h2>
+
+  <!-- Weather Details -->
       <div class="details">
         <div class="col">
           <img src="images/humidity.png">
@@ -43,14 +50,17 @@
 
   <script>
 
+  // API key and URL for weather data
     const apiKey = "51be790b2d7dd5a025e0d04e7c5abeba";
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=imperial&q=";
 
+    // Selectors
     const searchBox = document.querySelector(".search input");
     const searchBtn = document.querySelector(".search button");
     const weatherIcon = document.querySelector(".weatherI");
-
-    async function checkWeather(city){
+    
+    // Function to fetch and display weather data
+      async function checkWeather(city){
       const response = await fetch(apiUrl +  city + `&appid=${apiKey}`);
       
       if(response.status == 404){
@@ -60,10 +70,13 @@
       }else if (response.status != 404){
         var data = await response.json();
 
+        // Update weather details
         document.querySelector(".city").innerHTML = data.name;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°F";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+      // Update weather icon based on weather condition
 
         if(data.weather[0].main == "Clouds"){
     weatherIcon.src = "images/clouds.png"
@@ -92,11 +105,12 @@
       
     }
 
+    // Event listener for search button click
     searchBtn.addEventListener("click", ()=>{
       checkWeather(searchBox.value);
     })
 
-
+    // Load weather for default city (optional)
   checkWeather();  
   </script>
 
